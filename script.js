@@ -12,10 +12,10 @@ const btnSubmit = document.querySelector('.submit');
 
 const quizQuestions = [
     ["The body of the Egyptian Sphinx was based on which animal?", ["Lyon", "Fish", "Bird", "Human"]],
-    ['q2', ["a1.2", "a2.2", "a3.2", "a4"]],
-    ['q3', ["a1.3", "a2.3", "a3.3", "a4"]],
-    ['q4', ["a1.4", "a2.4", "a3.4", "a4"]],
-    ['q5', ["a1.5", "a2.5", "a3.5", "a4"]],
+    ["What is the capital of Denmark?", ["Ottawa", "Copenhagen", "Washington D.C", "Paris"]],
+    ["How many time zones does China have?", [4, 3, 1, 2]],
+    ["What is the smallest country in the world?", ["Spain", "Italy", "Canada", "Vatican City"]],
+    ["Where would you find the \"Spanish Steps\"?", ["Rome", "Barcelona", "Montreal", "Tel-Aviv"]],
 
 ]
 
