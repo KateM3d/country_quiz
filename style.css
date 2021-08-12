@@ -54,14 +54,12 @@ body {
 
 .buttons {
     display: none;
-    background-color: hotpink;
     text-align: center;
 }
 
 .questionField {
     display: none;
     margin-top: 50px;
-    background-color: lawngreen;
 }
 
 .btn:hover {
