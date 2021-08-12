@@ -9,6 +9,7 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    margin: auto;
     align-self: center;
     background-color: beige;
     width: 70vw;
@@ -89,4 +90,14 @@ body {
     font-size: 20px;
     font-weight: lighter;
     color: #6F4C5B;
+}
+
+#show {
+    display: none;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
 }
