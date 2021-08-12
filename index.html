@@ -6,13 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <title>Country Quiz</title>
 </head>
 
 <body>
 
 
+    <form>
+        <div class="container">
+            <div class="startBtn">
+                <button class="startQuiz">Let's Start!</button>
+            </div>
 
+            <div class="questionField">
+                <label id="question"></label>
+                <div class="answersContainer">
+                    <div>
+                        <input type="radio" name="answer" class="answers"><span id="answer1"></span></input>
+                    </div>
+                    <div>
+                        <input class="answers" name="answer" type="radio"><span id="answer2"></span></input>
+                    </div>
+                    <div>
+                        <input class="answers" name="answer" type="radio"><span id="answer3"></span></input>
+                    </div>
+                    <div>
+                        <input class="answers" name="answer" type="radio"><span id="answer4"></span></input>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn prev">Back</button>
+                <button class="btn next">Next</button>
+            </div>
+
+
+            <button hidden type="submit" class="btn submit">Submit Answers</button>
+            <p id="show"></p>
+        </div>
+    </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
