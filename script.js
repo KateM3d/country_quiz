@@ -6,7 +6,7 @@ let displayAnswerOne = document.querySelector('#answer1');
 let displayAnswerTwo = document.querySelector('#answer2');
 let displayAnswerThree = document.querySelector('#answer3');
 let displayAnswerFour = document.querySelector('#answer4');
-const btnBack = document.querySelector('.prev');
+
 const btnNext = document.querySelector('.next');
 const btnSubmit = document.querySelector('.submit');
 
@@ -29,17 +29,15 @@ btnStartQuiz.addEventListener('click', (e) => {
     showButtons();
     showQuestion();
     showQuestionOne();
-    if (displayAnswerOne.checked) {
-        points++;
-    }
-    btnNext.addEventListener('click', showQuestionTwo)
+
+    btnNext.addEventListener('click', showQuestionTwo);
 });
 
 
 function showButtons() {
-    const btnsBackAndNextShow = document.querySelector('.buttons');
+    const btnNextShow = document.querySelector('.buttons');
     const questionField = document.querySelector('.questionField');
-    btnsBackAndNextShow.style.display = 'block';
+    btnNextShow.style.display = 'block';
     questionField.style.display = 'block';
 
 }
@@ -66,6 +64,7 @@ function showQuestionOne() {
     displayAnswerFour.textContent = showAnswerOne[3];
 
 
+
 }
 
 
@@ -76,14 +75,13 @@ function showQuestionTwo(e) {
     displayQuestionOne.textContent = questionOne[1];
 
 
-    let answerTwo = quizQuestions.map(answer => answer[1]);
-    // let showAnswerTwo = answerTwo.find(answer => answer[1]);
+    let answerOne = quizQuestions.map(answer => answer[1]);
 
 
-    displayAnswerOne.textContent = answerTwo[1][0];
-    displayAnswerTwo.textContent = answerTwo[1][1];
-    displayAnswerThree.textContent = answerTwo[1][2];
-    displayAnswerFour.textContent = answerTwo[1][3];
+    displayAnswerOne.textContent = answerOne[1][0];
+    displayAnswerTwo.textContent = answerOne[1][1];
+    displayAnswerThree.textContent = answerOne[1][2];
+    displayAnswerFour.textContent = answerOne[1][3];
     if (displayAnswerTwo.checked) {
         points++;
     }
@@ -98,14 +96,13 @@ function showQuestionThree(e) {
     displayQuestionOne.textContent = questionOne[2];
 
 
-    let answerThree = quizQuestions.map(answer => answer[1]);
-    // let showAnswerTwo = answerTwo.find(answer => answer[1]);
+    let answerOne = quizQuestions.map(answer => answer[1]);
 
 
-    displayAnswerOne.textContent = answerThree[2][0];
-    displayAnswerTwo.textContent = answerThree[2][1];
-    displayAnswerThree.textContent = answerThree[2][2];
-    displayAnswerFour.textContent = answerThree[2][3];
+    displayAnswerOne.textContent = answerOne[2][0];
+    displayAnswerTwo.textContent = answerOne[2][1];
+    displayAnswerThree.textContent = answerOne[2][2];
+    displayAnswerFour.textContent = answerOne[2][3];
     if (displayAnswerThree.checked) {
         points++;
     }
@@ -119,14 +116,14 @@ function showQuestionFour(e) {
     displayQuestionOne.textContent = questionOne[3];
 
 
-    let answerFour = quizQuestions.map(answer => answer[1]);
-    // let showAnswerTwo = answerTwo.find(answer => answer[1]);
+    let answerOne = quizQuestions.map(answer => answer[1]);
 
 
-    displayAnswerOne.textContent = answerFour[3][0];
-    displayAnswerTwo.textContent = answerFour[3][1];
-    displayAnswerThree.textContent = answerFour[3][2];
-    displayAnswerFour.textContent = answerFour[3][3];
+
+    displayAnswerOne.textContent = answerOne[3][0];
+    displayAnswerTwo.textContent = answerOne[3][1];
+    displayAnswerThree.textContent = answerOne[3][2];
+    displayAnswerFour.textContent = answerOne[3][3];
     if (displayAnswerFour.checked) {
         points++;
     }
@@ -141,18 +138,17 @@ function showQuestionFive(e) {
     displayQuestionOne.textContent = questionOne[4];
 
 
-    let answerFive = quizQuestions.map(answer => answer[1]);
-    // let showAnswerTwo = answerTwo.find(answer => answer[1]);
+    let answerOne = quizQuestions.map(answer => answer[1]);
 
 
-    displayAnswerOne.textContent = answerFive[4][0];
-    displayAnswerTwo.textContent = answerFive[4][1];
-    displayAnswerThree.textContent = answerFive[4][2];
-    displayAnswerFour.textContent = answerFive[4][3];
+
+    displayAnswerOne.textContent = answerOne[4][0];
+    displayAnswerTwo.textContent = answerOne[4][1];
+    displayAnswerThree.textContent = answerOne[4][2];
+    displayAnswerFour.textContent = answerOne[4][3];
     if (displayAnswerOne.checked) {
         points++;
     }
-    btnBack.style.display = 'none';
     btnNext.style.display = 'none';
     btnSubmit.style.display = 'block';
     btnSubmit.addEventListener('click', showResults);
