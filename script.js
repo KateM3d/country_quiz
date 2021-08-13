@@ -15,11 +15,11 @@ let sliderNumber = 0;
 let points = 0;
 
 const quizQuestions = [
-    ["The body of the Egyptian Sphinx was based on which animal?", ["Lion", "Fish", "Bird", "Human"]],
-    ["What is the capital of Denmark?", ["Ottawa", "Copenhagen", "Washington D.C", "Paris"]],
-    ["How many time zones does China have?", [4, 3, 1, 2]],
-    ["What is the smallest country in the world?", ["Spain", "Italy", "Canada", "Vatican City"]],
-    ["Where would you find the \"Spanish Steps\"?", ["Rome", "Barcelona", "Montreal", "Tel-Aviv"]],
+    ["The body of the Egyptian Sphinx was based on which animal?", ["Lion", "Fish", "Bird", "Human"], 0],
+    ["What is the capital of Denmark?", ["Ottawa", "Copenhagen", "Washington D.C", "Paris"], 1],
+    ["How many time zones does China have?", [4, 3, 1, 2], 2],
+    ["What is the smallest country in the world?", ["Spain", "Italy", "Canada", "Vatican City"], 3],
+    ["Where would you find the \"Spanish Steps\"?", ["Rome", "Barcelona", "Montreal", "Tel-Aviv"], 0],
 
 ]
 
@@ -33,6 +33,7 @@ btnStartQuiz.addEventListener('click', (e) => {
     displayAnswerOptions(0);
 
     btnNext.addEventListener('click', showNextQuestion);
+
 })
 
 function showButtons() {
@@ -80,3 +81,5 @@ function displayAnswerOptions(sliderNumber) {
     displayAnswerFour.textContent = quizQuestions[sliderNumber][1][3];
 
 }
+
+let getCorrectAnswer = quizQuestions[sliderNumber][2];
