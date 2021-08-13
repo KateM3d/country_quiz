@@ -10,6 +10,8 @@ let displayAnswerFour = document.querySelector('#answer4');
 const btnNext = document.querySelector('.next');
 const btnSubmit = document.querySelector('.submit');
 
+let sliderNumber = 0;
+
 let points = 0;
 
 const quizQuestions = [
@@ -56,13 +58,8 @@ function showQuestionOne() {
     displayQuestionOne.textContent = questionOne[0];
 
 
-    let answerOne = quizQuestions.map(answer => answer[1])
-    let showAnswerOne = answerOne.find(answer => answer[0]);
-    displayAnswerOne.textContent = showAnswerOne[0];
-    displayAnswerTwo.textContent = showAnswerOne[1];
-    displayAnswerThree.textContent = showAnswerOne[2];
-    displayAnswerFour.textContent = showAnswerOne[3];
-
+    displayAnswerOptions(sliderNumber);
+    sliderNumber++;
 
 
 }
@@ -75,17 +72,20 @@ function showQuestionTwo(e) {
     displayQuestionOne.textContent = questionOne[1];
 
 
-    let answerOne = quizQuestions.map(answer => answer[1]);
+    // let answerOne = quizQuestions.map(answer => answer[1]);
+    displayAnswerOptions(sliderNumber);
+    sliderNumber++;
 
-
-    displayAnswerOne.textContent = answerOne[1][0];
-    displayAnswerTwo.textContent = answerOne[1][1];
-    displayAnswerThree.textContent = answerOne[1][2];
-    displayAnswerFour.textContent = answerOne[1][3];
+    // displayAnswerOne.textContent = answerOne[1][0];
+    // displayAnswerTwo.textContent = answerOne[1][1];
+    // displayAnswerThree.textContent = answerOne[1][2];
+    // displayAnswerFour.textContent = answerOne[1][3];
     if (displayAnswerTwo.checked) {
         points++;
     }
-    btnNext.addEventListener('click', showQuestionThree)
+
+    btnNext.addEventListener('click', showQuestionThree);
+
 }
 
 
@@ -94,15 +94,15 @@ function showQuestionThree(e) {
 
     let questionOne = quizQuestions.map(question => question[0]);
     displayQuestionOne.textContent = questionOne[2];
+    // let answerOne = quizQuestions.map(answer => answer[1]);
 
-
-    let answerOne = quizQuestions.map(answer => answer[1]);
-
-
-    displayAnswerOne.textContent = answerOne[2][0];
-    displayAnswerTwo.textContent = answerOne[2][1];
-    displayAnswerThree.textContent = answerOne[2][2];
-    displayAnswerFour.textContent = answerOne[2][3];
+    displayAnswerOptions(sliderNumber);
+    sliderNumber++;
+    console.log(displayAnswerOptions);
+    // displayAnswerOne.textContent = answerOne[2][0];
+    // displayAnswerTwo.textContent = answerOne[2][1];
+    // displayAnswerThree.textContent = answerOne[2][2];
+    // displayAnswerFour.textContent = answerOne[2][3];
     if (displayAnswerThree.checked) {
         points++;
     }
@@ -116,14 +116,15 @@ function showQuestionFour(e) {
     displayQuestionOne.textContent = questionOne[3];
 
 
-    let answerOne = quizQuestions.map(answer => answer[1]);
+    // let answerOne = quizQuestions.map(answer => answer[1]);
 
+    displayAnswerOptions(sliderNumber);
+    sliderNumber++;
 
-
-    displayAnswerOne.textContent = answerOne[3][0];
-    displayAnswerTwo.textContent = answerOne[3][1];
-    displayAnswerThree.textContent = answerOne[3][2];
-    displayAnswerFour.textContent = answerOne[3][3];
+    // displayAnswerOne.textContent = answerOne[3][0];
+    // displayAnswerTwo.textContent = answerOne[3][1];
+    // displayAnswerThree.textContent = answerOne[3][2];
+    // displayAnswerFour.textContent = answerOne[3][3];
     if (displayAnswerFour.checked) {
         points++;
     }
@@ -138,14 +139,15 @@ function showQuestionFive(e) {
     displayQuestionOne.textContent = questionOne[4];
 
 
-    let answerOne = quizQuestions.map(answer => answer[1]);
+    // let answerOne = quizQuestions.map(answer => answer[1]);
 
+    displayAnswerOptions(sliderNumber);
+    sliderNumber++;
 
-
-    displayAnswerOne.textContent = answerOne[4][0];
-    displayAnswerTwo.textContent = answerOne[4][1];
-    displayAnswerThree.textContent = answerOne[4][2];
-    displayAnswerFour.textContent = answerOne[4][3];
+    // displayAnswerOne.textContent = answerOne[4][0];
+    // displayAnswerTwo.textContent = answerOne[4][1];
+    // displayAnswerThree.textContent = answerOne[4][2];
+    // displayAnswerFour.textContent = answerOne[4][3];
     if (displayAnswerOne.checked) {
         points++;
     }
@@ -160,4 +162,14 @@ function showResults(e) {
     const par = document.querySelector('#show');
     par.style.display = 'block';
     par.textContent = "Your points: " + points;
+}
+
+
+function displayAnswerOptions(sliderNumber) {
+    let answerOne = quizQuestions.map(answer => answer[1]);
+    displayAnswerOne.textContent = answerOne[sliderNumber][0];
+    displayAnswerTwo.textContent = answerOne[sliderNumber][1];
+    displayAnswerThree.textContent = answerOne[sliderNumber][2];
+    displayAnswerFour.textContent = answerOne[sliderNumber][3];
+
 }
