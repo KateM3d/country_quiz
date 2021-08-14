@@ -1,16 +1,11 @@
 const btnStartQuiz = document.querySelector('.startQuiz');
 
-
 const btnNext = document.querySelector('.next');
 const btnSubmit = document.querySelector('.submit');
 
-let sliderNumber = 0;
-let lastSlider = 4;
+let questionNumber = 0;
 
 let points = 0;
-
-
-
 
 const quizQuestions = [
     ["The body of the Egyptian Sphinx was based on which animal?", ["Lion", "Fish", "Bird", "Human"], 0],
@@ -18,9 +13,7 @@ const quizQuestions = [
     ["How many time zones does China have?", [4, 3, 1, 2], 2],
     ["What is the smallest country in the world?", ["Spain", "Italy", "Canada", "Vatican City"], 3],
     ["Where would you find the \"Spanish Steps\"?", ["Rome", "Barcelona", "Montreal", "Tel-Aviv"], 0],
-
 ]
-
 
 btnStartQuiz.addEventListener('click', (e) => {
     e.preventDefault();
@@ -28,49 +21,41 @@ btnStartQuiz.addEventListener('click', (e) => {
     removeStartBtn.style.display = 'none';
     showButtons();
     showQuestion();
-    displayAnswerOptions(sliderNumber);
+    displayAnswerOptions(questionNumber);
 
     btnNext.addEventListener('click', showNextQuestion);
-
 })
-
-
-
 
 function showButtons() {
     const btnNextShow = document.querySelector('.buttons');
     const questionField = document.querySelector('.questionField');
     btnNextShow.style.display = 'block';
     questionField.style.display = 'block';
-
 }
 
 function showQuestion() {
     const questionField = document.querySelector('.questionField');
     questionField.style.display = 'block';
-
-}
-
-function checkAnswer() {
-    let correctAnswerIndex = quizQuestions[sliderNumber][2];
-    if (selectedAnswer[correctAnswerIndex].checked) {
-        points++;
-    }
-
-    console.log(selectedAnswer[correctAnswerIndex].checked);
 }
 
 let selectedAnswer = document.querySelectorAll('input');
+
+function checkAnswer() {
+    let correctAnswerIndex = quizQuestions[questionNumber][2];
+    if (selectedAnswer[correctAnswerIndex].checked) {
+        points++;
+    }
+}
 
 function showNextQuestion(e) {
     e.preventDefault();
 
     checkAnswer();
 
-    sliderNumber++;
-    displayAnswerOptions(sliderNumber);
+    questionNumber++;
+    displayAnswerOptions(questionNumber);
 
-    if (sliderNumber === lastSlider) {
+    if (questionNumber === quizQuestions.length - 1) {
         btnNext.style.display = 'none';
         btnSubmit.style.display = 'block';
         btnSubmit.addEventListener('click', showResults);
@@ -87,21 +72,21 @@ function showResults(e) {
 }
 
 
-function displayAnswerOptions(sliderNumber) {
+function displayAnswerOptions(questionNumber) {
 
-    let displayQuestionData = document.querySelector('#question');
+    let displayQuestionText = document.querySelector('#question');
 
     let displayAnswerOne = document.querySelector('#answer1');
     let displayAnswerTwo = document.querySelector('#answer2');
     let displayAnswerThree = document.querySelector('#answer3');
     let displayAnswerFour = document.querySelector('#answer4');
 
-    displayQuestionData.textContent = quizQuestions[sliderNumber][0]
+    displayQuestionText.textContent = quizQuestions[questionNumber][0]
 
-    displayAnswerOne.textContent = quizQuestions[sliderNumber][1][0];
-    displayAnswerTwo.textContent = quizQuestions[sliderNumber][1][1];
-    displayAnswerThree.textContent = quizQuestions[sliderNumber][1][2];
-    displayAnswerFour.textContent = quizQuestions[sliderNumber][1][3];
+    displayAnswerOne.textContent = quizQuestions[questionNumber][1][0];
+    displayAnswerTwo.textContent = quizQuestions[questionNumber][1][1];
+    displayAnswerThree.textContent = quizQuestions[questionNumber][1][2];
+    displayAnswerFour.textContent = quizQuestions[questionNumber][1][3];
 
     // selectedAnswer.forEach(answer => {
     //     if (answer.checked && (Number(answer.value) === Number(correctAnswerIndex))) {
