@@ -101,3 +101,12 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
+
+@media all and (max-width: 800px) {
+    #question {
+        font-size: 30px;
+    }
+    .btn {
+        margin-top: 40px;
+    }
+}
