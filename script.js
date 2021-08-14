@@ -87,14 +87,4 @@ function displayAnswerOptions(questionNumber) {
     displayAnswerTwo.textContent = quizQuestions[questionNumber][1][1];
     displayAnswerThree.textContent = quizQuestions[questionNumber][1][2];
     displayAnswerFour.textContent = quizQuestions[questionNumber][1][3];
-
-    // selectedAnswer.forEach(answer => {
-    //     if (answer.checked && (Number(answer.value) === Number(correctAnswerIndex))) {
-
-    //         points++;
-
-    //     }
-
-    // })
-
 }
